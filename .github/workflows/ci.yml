@@ -153,7 +153,8 @@ jobs:
     name: UI tests (${{ github.event_name == 'pull_request' && 'smoke' || github.event_name == 'workflow_dispatch' && inputs.suite || 'full regression' }})
     runs-on: ubuntu-latest
     needs: [build, quality, unit, changes]
-    if: needs.changes.outputs.ui == 'true' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'    steps:
+    if: needs.changes.outputs.ui == 'true' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'    
+    steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
