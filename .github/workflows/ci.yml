@@ -188,7 +188,7 @@ jobs:
           path: dist/
       
       - name: UI tests
-        run: npx playwright test --project=ui-chromium --shard=${{ matrix.shard }}/4 ${{ env.GREP }}        
+        run: npx playwright test --project=ui-chromium --shard=${{ matrix.shard }}/8 ${{ env.GREP }}        
         env:
           GREP: >-
             ${{ (github.event_name == 'pull_request'
